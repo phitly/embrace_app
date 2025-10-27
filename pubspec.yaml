@@ -1,5 +1,5 @@
 name: embrace
-description: "A new Flutter project."
+description: "A comprehensive fitness tracker app for logging workouts, tracking calories, and visualizing progress."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -34,6 +34,26 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  
+  # Database
+  sqflite: ^2.4.1
+  path: ^1.8.3
+  
+  # Charts and data visualization
+  fl_chart: ^0.69.0
+  
+  # Notifications
+  flutter_local_notifications: ^18.0.1
+  timezone: ^0.9.4
+  
+  # Date/time utilities
+  intl: ^0.19.0
+  
+  # State management and navigation
+  provider: ^6.1.2
+  
+  # Local storage
+  shared_preferences: ^2.3.3
 
 dev_dependencies:
   flutter_test:
