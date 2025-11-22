@@ -1,0 +1,56 @@
+Table users {
+  user_id int [pk, increment]
+  name varchar
+  email varchar [unique]
+  password varchar
+  created_date datetime
+}
+
+Table journal_entries {
+  entry_id int [pk, increment]
+  user_id int [ref: > users.user_id]
+  mood varchar
+  content text
+  entry_date datetime
+  is_private boolean
+}
+
+Table reminders {
+  reminder_id int [pk, increment]
+  user_id int [ref: > users.user_id]
+  reminder_type varchar
+  time time
+  message varchar
+  is_active boolean
+}
+
+Table mindfulness_exercises {
+  exercise_id int [pk, increment]
+  title varchar
+  category varchar
+  duration int
+  description text
+  instructions text
+}
+
+Table user_exercise_history {
+  history_id int [pk, increment]
+  user_id int [ref: > users.user_id]
+  exercise_id int [ref: > mindfulness_exercises.exercise_id]
+  completed_date datetime
+  duration_completed int
+}
+
+Table affirmations {
+  affirmation_id int [pk, increment]
+  text varchar
+  category varchar
+}
+
+Table user_settings {
+  setting_id int [pk, increment]
+  user_id int [ref: > users.user_id]
+  theme varchar
+  notifications_enabled boolean
+  language varchar
+}
